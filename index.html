@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mira anuncios y gana</title>
+    <title>Watch Ads and Earn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="//niphaumeenses.net/vignette.min.js" data-zone="8591840" data-sdk="show_8591840"></script>
     <style>
@@ -127,27 +127,35 @@
             opacity: 1;
             pointer-events: auto;
         }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+        }
     </style>
 </head>
 <body>
-    <!-- Registro flotante -->
+    <!-- Floating Registration -->
     <div class="floating-register" id="register-container">
-        <h2>Regístrate</h2>
-        <input type="text" id="nickname" placeholder="Ingresa tu apodo">
-        <button onclick="registerUser()">Registrarse</button>
+        <h2>Register</h2>
+        <input type="text" id="nickname" placeholder="Enter your nickname">
+        <button onclick="registerUser()">Register</button>
     </div>
 
-    <!-- Contenedor de anuncios -->
+    <!-- Ad Container -->
     <div class="ad-container" id="ad-container">
-        <h1>Mira anuncios y gana el panel</h1>
-        <h2>Acumula saldo y llega 00.30$ para ganarte el panel de autoclick de anuncio de Monetag</h2>
+        <h1>Watch Ads and Earn</h1>
+        <h2>Accumulate balance and reach $0.30 to earn your Monetag ad autoclick panel</h2>
         <div class="user-data">
-            <p><strong>Apodo:</strong> <span id="nickname-display"></span></p>
-            <p><strong>Número:</strong> <span id="random-number-display"></span></p>
-            <p><strong>Saldo:</strong> $<span id="balance-display">0.000</span></p>
+            <p><strong>Nickname:</strong> <span id="nickname-display"></span></p>
+            <p><strong>Number:</strong> <span id="random-number-display"></span></p>
+            <p><strong>Balance:</strong> $<span id="balance-display">0.000</span></p>
         </div>
-        <button class="reward-button" onclick="watchAd()">View Ads</button>
-        <button class="telegram-button" id="telegram-button">Mandar captura</button>
+        <div class="button-container">
+            <button class="reward-button" onclick="watchAd()">View Ads</button>
+            <a href="https://t.me/AdsRewardsMonetag_bot" class="telegram-button" id="telegram-button" target="_blank">Send Screenshot</a>
+        </div>
     </div>
 
     <script>
@@ -175,7 +183,7 @@
         function registerUser() {
             const nickname = document.getElementById('nickname').value.trim();
             if (!nickname) {
-                alert('Por favor, ingresa un apodo.');
+                alert('Please enter a nickname.');
                 return;
             }
 
@@ -198,7 +206,7 @@
                 localStorage.setItem('balance', balance.toFixed(3));
                 document.getElementById('balance-display').textContent = balance.toFixed(3);
                 checkTelegramButton();
-                alert('Has ganado $0.001');
+                alert('You have earned $0.001');
             });
         }
 
