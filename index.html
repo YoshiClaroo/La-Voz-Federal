@@ -1,239 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch Ads and Earn</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="//niphaumeenses.net/vignette.min.js" data-zone="8777201" data-sdk="show_8777201"></script>
+    <title>Prex Hub</title>
+    <script src='//whephiwums.com/sdk.js' data-zone='9077302' data-sdk='show_9077302'></script>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #d8baff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .floating-register {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #333333;
-            border: 2px solid #d8baff;
-            border-radius: 15px;
-            padding: 30px;
             text-align: center;
-            z-index: 1000;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background-color: #121212;
+            color: white;
         }
-
-        .floating-register h2 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: #d8baff;
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
         }
-
-        .floating-register input,
-        .floating-register button {
+        video {
             width: 100%;
-            margin: 15px 0;
-            padding: 10px;
-            border-radius: 5px;
-            border: 2px solid #d8baff;
-            background: #1a1a1a;
-            color: #d8baff;
-            font-size: 16px;
-        }
-
-        .floating-register button {
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .floating-register button:hover {
-            background: #a879ff;
-            transform: scale(1.05);
-        }
-
-        .ad-container {
-            display: none;
-            text-align: center;
-            padding: 30px;
-            background: #333333;
-            border: 2px solid #d8baff;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            color: #d8baff;
-            margin: 20px auto;
-            box-sizing: border-box;
-        }
-
-        .ad-container h1 {
-            margin-bottom: 10px;
-            color: #d8baff;
-            font-size: 1.6rem;
-        }
-
-        .ad-container h2 {
-            font-size: 1.2rem;
-            color: #a8a8a8;
-            margin-bottom: 20px;
-        }
-
-        .ad-container .user-data {
-            margin-bottom: 20px;
-        }
-
-        .reward-button,
-        .telegram-button {
-            padding: 15px;
+            max-height: 450px;
             border-radius: 10px;
-            text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            border: 2px solid #d8baff;
-            color: #d8baff;
-            background-color: #333333;
-            font-size: 18px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            font-weight: bold;
-            text-decoration: none;
-            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
-
-        .reward-button:hover,
-        .telegram-button:hover {
-            background-color: #a879ff;
-            transform: scale(1.05);
+        .prev {
+            background-color: #ff5733;
+            color: white;
         }
-
-        .telegram-button {
-            display: block;
-            opacity: 0.5;
-            pointer-events: none;
+        .next {
+            background-color: #33c4ff;
+            color: white;
         }
-
-        .telegram-button.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px; /* Space between buttons */
-        }
-
-        /* Banner positioning */
-        #frame {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 320px;
-            height: auto;
+        button:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <!-- Floating Registration -->
-    <div class="floating-register" id="register-container">
-        <h2>Register</h2>
-        <input type="text" id="nickname" placeholder="Enter your nickname">
-        <button onclick="registerUser()">Register</button>
-    </div>
 
-    <!-- Ad Container -->
-    <div class="ad-container" id="ad-container">
-        <h1>Watch Ads and Earn</h1>
-        <h2>Accumulate balance and reach $0.30 to earn your Monetag ad autoclick panel</h2>
-        <div class="user-data">
-            <p><strong>Nickname:</strong> <span id="nickname-display"></span></p>
-            <p><strong>Number:</strong> <span id="random-number-display"></span></p>
-            <p><strong>Balance:</strong> $<span id="balance-display">0.000</span></p>
+    <div class="container">
+        <h2>Prex Hub</h2>
+        <video id="videoPlayer" controls autoplay>
+            Tu navegador no soporta la reproducción de video.
+        </video>
+        <div class="controls">
+            <button class="prev" onclick="prevVideo()">⏮ Anterior</button>
+            <button class="next" onclick="nextVideo()">⏭ Siguiente</button>
         </div>
-        <div class="button-container">
-            <button class="reward-button" onclick="watchAd()">View Ads</button>
-            <a href="https://t.me/AdsRewardsMonetag_bot" class="telegram-button" id="telegram-button" target="_blank">Send Screenshot</a>
-        </div>
-    </div>
-
-    <!-- Banner -->
-    <div id="frame" style="width:320px; height:auto;">
-        <iframe data-aa='2377584' src='//ad.a-ads.com/2377584?size=320x50' style='width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
-        <a style="display: block; text-align: right; font-size: 12px;" id="preview-link" href="https://aads.com/campaigns/new/?source_id=2377584&source_type=ad_unit&partner=2377584">Advertise here</a>
     </div>
 
     <script>
-        let balance = 0;
+        // Lista de videos
+        const videos = [
+            "https://www.xpaja.net/views/videos/2025/02/quiero-tu-lechita-como-regalo-de-san-valent-n/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2025/02/venga-yo-le-hago-el-favor-pero-si-me-embaraza-lo-mantienes/video1080p.mp4",
+            "https://www.xpaja.net/views/videos/2024/10/una-monja-endemoniada-lo-persigue-hasta-su-casa-y-le-hace-vivir-una-noche-de-placer/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2024/09/folla-con-su-hermanastra-despues-de-una-busqueda-fallida-de-su-perrita-perdida/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2022/01/la-materialista-masturbandose-sin-censura/video480p.mp4",
+            "https://www.xpaja.net/views/videos/2025/03/terminando-mi-rutina-de-ejercicio-con-una-buena-follada/video480p.mp4",
+            "https://www.xpaja.net/views/videos/2025/03/pelirroja-le-pide-a-su-novio-que-le-folle-el-culo/video480p.mp4",
+            "https://www.xpaja.net/views/videos/2025/03/hailey-hitch-new-bg-bathroom-fuck-ppv-video-leaked/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2025/02/kinsley-wyatt-bath-tub-blowjob-ppv-video-leaked/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2025/01/auhneesh-nicole-leaked-spiderman-sex-tape/video720p.mp4"
+        ];
 
-        window.onload = () => {
-            const savedNickname = localStorage.getItem('nickname');
-            const savedNumber = localStorage.getItem('randomNumber');
-            const savedBalance = parseFloat(localStorage.getItem('balance')) || 0;
+        let currentIndex = Math.floor(Math.random() * videos.length);
+        const videoPlayer = document.getElementById("videoPlayer");
 
-            if (savedNickname && savedNumber) {
-                balance = savedBalance;
-                document.getElementById('nickname-display').textContent = savedNickname;
-                document.getElementById('random-number-display').textContent = savedNumber;
-                document.getElementById('balance-display').textContent = balance.toFixed(3);
-                document.getElementById('register-container').style.display = 'none';
-                document.getElementById('ad-container').style.display = 'block';
-                checkTelegramButton();
-            } else {
-                document.getElementById('register-container').style.display = 'block';
-                document.getElementById('ad-container').style.display = 'none';
+        function loadVideo(index) {
+            if (index >= 0 && index < videos.length) {
+                videoPlayer.src = videos[index];
+                videoPlayer.play();
             }
-        };
-
-        function registerUser() {
-            const nickname = document.getElementById('nickname').value.trim();
-            if (!nickname) {
-                alert('Please enter a nickname.');
-                return;
-            }
-
-            const randomNumber = Math.floor(Math.random() * 1000000) + 1;
-
-            localStorage.setItem('nickname', nickname);
-            localStorage.setItem('randomNumber', randomNumber);
-            localStorage.setItem('balance', '0.000');
-
-            document.getElementById('nickname-display').textContent = nickname;
-            document.getElementById('random-number-display').textContent = randomNumber;
-
-            document.getElementById('register-container').style.display = 'none';
-            document.getElementById('ad-container').style.display = 'block';
         }
 
-        function watchAd() {
-            show_8777201().then(() => {
-                balance += 0.001;
-                localStorage.setItem('balance', balance.toFixed(3));
-                document.getElementById('balance-display').textContent = balance.toFixed(3);
-                checkTelegramButton();
-                alert('You have earned $0.001');
+        function nextVideo() {
+            currentIndex = (currentIndex + 1) % videos.length;
+            loadVideo(currentIndex);
+            showAd();
+        }
+
+        function prevVideo() {
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+            loadVideo(currentIndex);
+            showAd();
+        }
+
+        function showAd() {
+            show_9077302('pop').then(() => {
+                console.log("Anuncio visto correctamente.");
+            }).catch(e => {
+                console.error("Error en la visualización del anuncio:", e);
             });
         }
 
-        function checkTelegramButton() {
-            const telegramButton = document.getElementById('telegram-button');
-            if (balance >= 0.30) {
-                telegramButton.classList.add('active');
-            } else {
-                telegramButton.classList.remove('active');
-            }
-        }
+        loadVideo(currentIndex);
     </script>
+
 </body>
-            </html>
+</html>
