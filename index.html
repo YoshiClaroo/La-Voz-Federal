@@ -3,125 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prex Hub</title>
-    <script src='//whephiwums.com/sdk.js' data-zone='9077302' data-sdk='show_9077302'></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #121212;
-            color: white;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        video {
-            width: 100%;
-            max-height: 450px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
-        }
-        .controls {
-            margin-top: 15px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .prev {
-            background-color: #ff5733;
-            color: white;
-        }
-        .next {
-            background-color: #33c4ff;
-            color: white;
-        }
-        button:hover {
-            opacity: 0.8;
-        }
-    </style>
+    <title>La Voz Federal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <div class="container">
-        <h2>Prex Hub</h2>
-        <video id="videoPlayer" controls autoplay>
-            Tu navegador no soporta la reproducción de video.
-        </video>
-        <div class="controls">
-            <button class="prev" onclick="prevVideo()">⏮ Anterior</button>
-            <button class="next" onclick="nextVideo()">⏭ Siguiente</button>
-        </div>
-
-        <!-- Popunder -->
-        <script type='text/javascript' src='//pl26101764.effectiveratecpm.com/c3/1d/90/c31d90c4c5260679b0fb0042f30aba91.js'></script>
-
-        <script type="text/javascript">
-    atOptions = {
-        'key' : '9306e298b4d477898694abc7ecfa42ed',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-    };
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/9306e298b4d477898694abc7ecfa42ed/invoke.js"></script>
+    <!-- Encabezado con título e imagen de fondo -->
+    <div class="header">
+        <h1>La Voz Federal</h1>
     </div>
 
-    <script>
-        // Lista de videos
-        const videos = [
-            "https://www.xpaja.net/views/videos/2025/02/quiero-tu-lechita-como-regalo-de-san-valent-n/video720p.mp4",
-            "https://www.xpaja.net/views/videos/2025/02/venga-yo-le-hago-el-favor-pero-si-me-embaraza-lo-mantienes/video1080p.mp4",
-            "https://www.xpaja.net/views/videos/2024/10/una-monja-endemoniada-lo-persigue-hasta-su-casa-y-le-hace-vivir-una-noche-de-placer/video720p.mp4",
-            "https://www.xpaja.net/views/videos/2024/09/folla-con-su-hermanastra-despues-de-una-busqueda-fallida-de-su-perrita-perdida/video720p.mp4",
-            "https://www.xpaja.net/views/videos/2022/01/la-materialista-masturbandose-sin-censura/video480p.mp4",
-            "https://www.xpaja.net/views/videos/2025/03/terminando-mi-rutina-de-ejercicio-con-una-buena-follada/video480p.mp4",
-            "https://www.xpaja.net/views/videos/2025/03/pelirroja-le-pide-a-su-novio-que-le-folle-el-culo/video480p.mp4",
-            "https://www.xpaja.net/views/videos/2025/03/hailey-hitch-new-bg-bathroom-fuck-ppv-video-leaked/video720p.mp4",
-            "https://www.xpaja.net/views/videos/2025/02/kinsley-wyatt-bath-tub-blowjob-ppv-video-leaked/video720p.mp4",
-            "https://www.xpaja.net/views/videos/2025/01/auhneesh-nicole-leaked-spiderman-sex-tape/video720p.mp4"
-        ];
+    <!-- Contenido principal (entradas debajo del encabezado) -->
+    <div class="content">
+        <!-- Entrada 1 -->
+        <div class="noticia">
+            <div class="fecha">31 de enero de 2025</div>
+            <div class="noticia-contenido">
+                <img src="images/noticia1.jpg" alt="Imagen de la Noticia 1" class="noticia-imagen">
+                <div class="texto">
+                    <h2>Francia advierte a Estados Unidos sobre comercio, territorios y geopolítica</h2>
+                    <p>Francia advierte a Estados Unidos sobre comercio, territorios y geopolítica. En los últimos días, Francia ha lanzado varias advertencias a Estados Unidos en diferentes frentes, desde asuntos...</p>
+                    <a href="entradas/noticia1.html" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
 
-        let currentIndex = Math.floor(Math.random() * videos.length);
-        const videoPlayer = document.getElementById("videoPlayer");
-
-        function loadVideo(index) {
-            if (index >= 0 && index < videos.length) {
-                videoPlayer.src = videos[index];
-                videoPlayer.play();
-            }
-        }
-
-        function nextVideo() {
-            currentIndex = (currentIndex + 1) % videos.length;
-            loadVideo(currentIndex);
-            showAd();
-        }
-
-        function prevVideo() {
-            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-            loadVideo(currentIndex);
-            showAd();
-        }
-
-        function showAd() {
-            show_9077302('pop').then(() => {
-                console.log("Anuncio visto correctamente.");
-            }).catch(e => {
-                console.error("Error en la visualización del anuncio:", e);
-            });
-        }
-
-        loadVideo(currentIndex);
-    </script>
-
+        <!-- Entrada 2 -->
+        <div class="noticia">
+            <div class="fecha">31 de enero de 2025</div>
+            <div class="noticia-contenido">
+                <img src="images/noticia2.jpg" alt="Imagen de la Noticia 2" class="noticia-imagen">
+                <div class="texto">
+                    <h2>Donald Trump reafirmó su idea de aplicar aranceles del 25% a México y Canadá</h2>
+                    <p>Donald Trump, presidente de Estados Unidos. Foto: Reuters/Elizabeth Frantz. El presidente estadounidense señaló que esta medida entrará en vigor el 1 de febrero y se debe al déficit comercial...</p>
+                    <a href="entradas/noticia2.html" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Agrega más entradas aquí -->
+    </div>
 </body>
 </html>
