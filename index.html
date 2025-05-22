@@ -12,15 +12,20 @@
         <h1><a href="index.html" class="header-link">La Voz Federal</a></h1>
     </div>
 
-    <!-- Espacio para el banner Nativo de Adsterra (puedes elegir el tipo) -->
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="cookies.html">Política de Cookies</a>.</p>
+        <button id="accept-cookies" class="cookie-button">Aceptar</button>
+    </div>
+
+    <!-- Espacio para el banner Nativo de Adsterra -->
     <div class="adsterra-banner">
         <!-- Inserta aquí el código del banner Nativo de Adsterra -->
-        <!-- Ejemplo: <script async src="URL_DEL_BANNER"></script> -->
     </div>
 
     <!-- Contenido principal (entradas debajo del encabezado) -->
     <div class="content">
-        <!-- Entrada 1 -->
+        <!-- Entradas (inicialmente ocultas, se mostrarán con JavaScript) -->
         <div class="noticia">
             <div class="fecha">31 de enero de 2025</div>
             <div class="noticia-contenido">
@@ -33,7 +38,6 @@
             </div>
         </div>
 
-        <!-- Entrada 2 -->
         <div class="noticia">
             <div class="fecha">31 de enero de 2025</div>
             <div class="noticia-contenido">
@@ -45,25 +49,125 @@
                 </div>
             </div>
         </div>
-        <!-- Agrega más entradas aquí -->
+
+        <!-- Agrega más entradas aquí (por ejemplo, hasta 10 para probar el botón "Cargar más") -->
+        <div class="noticia">
+            <div class="fecha">1 de febrero de 2025</div>
+            <div class="noticia-contenido">
+                <img src="images/noticia3.jpg" alt="Imagen de la Noticia 3" class="noticia-imagen">
+                <div class="texto">
+                    <h2>Entrada 3</h2>
+                    <p>Resumen de la entrada 3...</p>
+                    <a href="entradas/noticia3.html" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="noticia">
+            <div class="fecha">2 de febrero de 2025</div>
+            <div class="noticia-contenido">
+                <img src="images/noticia4.jpg" alt="Imagen de la Noticia 4" class="noticia-imagen">
+                <div class="texto">
+                    <h2>Entrada 4</h2>
+                    <p>Resumen de la entrada 4...</p>
+                    <a href="entradas/noticia4.html" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="noticia">
+            <div class="fecha">3 de febrero de 2025</div>
+            <div class="noticia-contenido">
+                <img src="images/noticia5.jpg" alt="Imagen de la Noticia 5" class="noticia-imagen">
+                <div class="texto">
+                    <h2>Entrada 5</h2>
+                    <p>Resumen de la entrada 5...</p>
+                    <a href="entradas/noticia5.html" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="noticia">
+            <div class="fecha">4 de febrero de 2025</div>
+            <div class="noticia-contenido">
+                <img src="images/noticia6.jpg" alt="Imagen de la Noticia 6" class="noticia-imagen">
+                <div class="texto">
+                    <h2>Entrada 6</h2>
+                    <p>Resumen de la entrada 6...</p>
+                    <a href="entradas/noticia6.html" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para cargar más entradas -->
+        <button id="load-more" class="load-more">Cargar más entradas</button>
     </div>
 
     <!-- Pie de página -->
     <footer class="footer">
-        <p>&copy; 2025 La Voz Federal. Todos los derechos reservados.</p>
+        <p>© 2025 La Voz Federal. Todos los derechos reservados.</p>
         <p><a href="terminos.html">Términos y Condiciones</a> | <a href="cookies.html">Política de Cookies</a></p>
     </footer>
 
-    <!-- Código para Popunder de Adsterra (se ejecuta al cargar la página) -->
+    <!-- JavaScript para el banner de cookies y cargar más entradas -->
+    <script>
+        // Banner de Cookies
+        document.addEventListener('DOMContentLoaded', function () {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptCookiesButton = document.getElementById('accept-cookies');
+
+            // Verifica si el usuario ya aceptó las cookies
+            if (!document.cookie.split(';').some((item) => item.trim().startsWith('cookiesAccepted=true'))) {
+                cookieBanner.style.display = 'block';
+            }
+
+            // Al hacer clic en "Aceptar", oculta el banner y guarda la cookie
+            acceptCookiesButton.addEventListener('click', function () {
+                cookieBanner.style.display = 'none';
+                document.cookie = 'cookiesAccepted=true; max-age=31536000; path=/'; // Cookie válida por 1 año
+            });
+        });
+
+        // Cargar Más Entradas
+        document.addEventListener('DOMContentLoaded', function () {
+            const entries = document.querySelectorAll('.noticia');
+            const loadMoreButton = document.getElementById('load-more');
+            let currentIndex = 0;
+            const entriesPerLoad = 5;
+
+            // Oculta todas las entradas al inicio
+            entries.forEach(entry => entry.style.display = 'none');
+
+            // Muestra las primeras 5 entradas
+            function showEntries() {
+                const nextIndex = currentIndex + entriesPerLoad;
+                for (let i = currentIndex; i < nextIndex && i < entries.length; i++) {
+                    entries[i].style.display = 'block';
+                }
+                currentIndex = nextIndex;
+
+                // Oculta el botón si no hay más entradas que cargar
+                if (currentIndex >= entries.length) {
+                    loadMoreButton.style.display = 'none';
+                }
+            }
+
+            // Muestra las primeras entradas al cargar la página
+            showEntries();
+
+            // Carga más entradas al hacer clic en el botón
+            loadMoreButton.addEventListener('click', showEntries);
+        });
+    </script>
+
+    <!-- Código para Popunder de Adsterra -->
     <script>
         // Inserta aquí el código del Popunder de Adsterra
-        // Ejemplo: atOptions = { 'key': 'TU_KEY', 'format': 'popunder', ... };
     </script>
 
     <!-- Código para Barra Social de Adsterra -->
     <script>
         // Inserta aquí el código de la Barra Social de Adsterra
-        // Ejemplo: atOptions = { 'key': 'TU_KEY', 'format': 'social-bar', ... };
     </script>
 </body>
 </html>
