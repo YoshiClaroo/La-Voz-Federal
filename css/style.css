@@ -10,7 +10,7 @@ body {
 .header {
     position: relative;
     height: 200px;
-    background-image: url('../images/fondo.jpg'); /* Ajusta la ruta de tu imagen */
+    background-image: url('https://i.ibb.co/HfgwyCLg/file-00000000414861f983b0d4a204ee0eab.png'); /* Ajusta la ruta de tu imagen */
     background-size: cover;
     background-position: center;
     display: flex;
