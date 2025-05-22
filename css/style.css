@@ -1,0 +1,131 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Encabezado con imagen de fondo */
+.header {
+    position: relative;
+    height: 200px;
+    background-image: url('../images/fondo.jpg'); /* Ajusta la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Título centrado */
+.header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    margin: 0;
+}
+
+/* Contenedor principal (debajo del encabezado) */
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    position: relative; /* Asegura que las entradas estén en un layer separado */
+}
+
+/* Estilo de las noticias */
+.noticia {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Fecha */
+.fecha {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Contenido de la noticia */
+.noticia-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Imagen de la noticia */
+.noticia-imagen {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Texto de la noticia */
+.texto {
+    flex: 1;
+}
+
+.texto h2 {
+    font-size: 1.4em;
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.texto p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    color: #444;
+}
+
+/* Botón Leer más */
+.leer-mas, .back-link {
+    display: inline-block;
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.leer-mas:hover, .back-link:hover {
+    color: #0056b3;
+}
+
+/* Diseño responsivo */
+@media (min-width: 768px) {
+    .header {
+        height: 300px;
+    }
+    .header h1 {
+        font-size: 3.5em;
+        padding: 20px;
+    }
+    .noticia {
+        padding: 20px;
+    }
+    .noticia-contenido {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .noticia-imagen {
+        width: 150px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+    .texto h2 {
+        font-size: 1.8em;
+    }
+    .texto p {
+        font-size: 1em;
+    }
+}
