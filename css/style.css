@@ -10,7 +10,7 @@ body {
 .header {
     position: relative;
     height: 200px;
-    background-image: url('https://i.ibb.co/HfgwyCLg/file-00000000414861f983b0d4a204ee0eab.png'); /* Ajusta la ruta de tu imagen */
+    background-image: url('https://i.ibb.co/HfgwyCLg/file-00000000414861f983b0d4a204ee0eab.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -23,11 +23,27 @@ body {
 .header h1 {
     font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 10px;
     color: white;
     margin: 0;
+}
+
+/* Enlace del título */
+.header-link {
+    color: white;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    color: #ddd;
+}
+
+/* Espacio para el banner de Adsterra */
+.adsterra-banner {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 /* Contenedor principal (debajo del encabezado) */
@@ -35,7 +51,7 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 15px;
-    position: relative; /* Asegura que las entradas estén en un layer separado */
+    position: relative;
 }
 
 /* Estilo de las noticias */
@@ -101,31 +117,18 @@ body {
     color: #0056b3;
 }
 
-/* Diseño responsivo */
-@media (min-width: 768px) {
-    .header {
-        height: 300px;
-    }
-    .header h1 {
-        font-size: 3.5em;
-        padding: 20px;
-    }
-    .noticia {
-        padding: 20px;
-    }
-    .noticia-contenido {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .noticia-imagen {
-        width: 150px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-    .texto h2 {
-        font-size: 1.8em;
-    }
-    .texto p {
-        font-size: 1em;
-    }
+/* Pie de página */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color:
