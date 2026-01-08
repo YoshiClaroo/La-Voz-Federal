@@ -1,97 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo Asombroso</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundo Asombroso</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: #fff;
-    }
+<style>
+:root{
+  --bg:#0b0b0b;
+  --card:#121212;
+  --text:#ffffff;
+  --muted:#b0b0b0;
+  --accent:#00b3ff;
+}
 
-    header {
-      padding: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+*{box-sizing:border-box}
 
-    .container {
-      padding: 15px;
-    }
+body{
+  margin:0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    .brand {
-      text-align: center;
-      font-size: 14px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      opacity: 0.8;
-    }
+/* HEADER */
+header{
+  padding:18px 22px;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:1px;
+}
 
-    .image-box img {
-      width: 100%;
-      border-radius: 10px;
-    }
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
 
-    h1 {
-      font-size: 22px;
-      margin: 15px 0 10px;
-    }
+/* BRAND */
+.brand{
+  text-align:center;
+  font-size:13px;
+  letter-spacing:3px;
+  color:var(--muted);
+  margin-bottom:14px;
+}
 
-    p {
-      font-size: 15px;
-      line-height: 1.5;
-      opacity: 0.85;
-    }
+/* CARD */
+.card{
+  background:var(--card);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
 
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
+/* IMAGE */
+.card-img{
+  position:relative;
+}
 
-    .actions a {
-      text-decoration: none;
-      color: #00aaff;
-      font-weight: bold;
-    }
-  </style>
+.card-img img{
+  width:100%;
+  display:block;
+}
+
+.card-img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, transparent, rgba(0,0,0,.7));
+}
+
+/* CONTENT */
+.card-content{
+  padding:18px;
+}
+
+.card-content h1{
+  font-size:24px;
+  margin:0 0 10px;
+}
+
+.card-content p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+/* ACTIONS */
+.actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:15px;
+}
+
+.actions a{
+  text-decoration:none;
+  font-weight:600;
+  color:var(--accent);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px 10px;
+  font-size:13px;
+  color:#777;
+}
+
+/* COOKIES */
+#cookies{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#111;
+  color:#fff;
+  padding:14px;
+  font-size:14px;
+  display:none;
+  z-index:9999;
+}
+
+#cookies button{
+  background:var(--accent);
+  border:none;
+  color:#000;
+  padding:8px 14px;
+  font-weight:700;
+  margin-left:10px;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(min-width:768px){
+  .card-content h1{
+    font-size:28px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  MUNDO ASOMBROSO
-</header>
+<header>MUNDO ASOMBROSO</header>
 
 <div class="container">
 
-  <div class="brand">MUNDO ASOMBROSO</div>
+<div class="brand">MUNDO ASOMBROSO</div>
 
-  <div class="image-box">
-    <img src="imagen.jpg" alt="Imagen principal">
+<div class="card">
+
+  <div class="card-img">
+    <img src="https://i.postimg.cc/Qt5zvd5J/IMG-1031.png" alt="Imagen principal">
   </div>
 
-  <h1>🧠 5 DATOS PSICOLÓGICOS QUE VAN A CAMBIAR LA FORMA EN QUE VES A LOS DEMÁS</h1>
+  <div class="card-content">
+    <h1>🧠 5 datos psicológicos que cambiarán cómo ves a los demás</h1>
 
-  <p>
-    ¿Alguna vez te preguntaste por qué algunas personas caen bien al instante
-    o por qué recordamos cosas que nunca pasaron? La mente humana es más
-    misteriosa de lo que parece...
-  </p>
+    <p>
+      ¿Por qué algunas personas caen bien al instante?
+      ¿Por qué recordamos cosas que nunca pasaron?
+      La mente humana es más misteriosa de lo que imaginas…
+    </p>
 
-  <div class="actions">
-    <a href="#" onclick="navigator.share ? navigator.share({title:'Mundo Asombroso', url: window.location.href}) : alert('Copiá el link para compartir')">
-      🔗 Compartir
-    </a>
-
-    <a href="post.html">LEER MÁS →</a>
+    <div class="actions">
+      <a href="#" onclick="share()">🔗 Compartir</a>
+      <a href="post.html">LEER MÁS →</a>
+    </div>
   </div>
 
 </div>
+
+</div>
+
+<footer>
+© 2025 Mundo Asombroso. Todos los derechos reservados.
+</footer>
+
+<!-- COOKIES -->
+<div id="cookies">
+Este sitio utiliza cookies para mejorar la experiencia del usuario.
+<button onclick="acceptCookies()">Aceptar</button>
+</div>
+
+<script>
+function acceptCookies(){
+  localStorage.setItem("cookies","ok");
+  document.getElementById("cookies").style.display="none";
+}
+if(!localStorage.getItem("cookies")){
+  document.getElementById("cookies").style.display="block";
+}
+
+function share(){
+  if(navigator.share){
+    navigator.share({
+      title:'Mundo Asombroso',
+      url:window.location.href
+    });
+  }else{
+    alert("Copiá el enlace para compartir");
+  }
+}
+</script>
 
 </body>
 </html>
