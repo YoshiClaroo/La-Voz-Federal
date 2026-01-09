@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundo Asombroso</title>
+
+<style>
+:root{
+  --bg:#0b0b0b;
+  --card:#121212;
+  --text:#fff;
+  --muted:#aaa;
+  --accent:#00b3ff;
+}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  padding:18px;
+  font-weight:700;
+}
+
+.container{
+  max-width:850px;
+  margin:auto;
+  padding:15px;
+}
+
+.hero img{
+  width:100%;
+  border-radius:14px;
+}
+
+h1{
+  margin:20px 0 10px;
+}
+
+.description{
+  color:var(--muted);
+  margin-bottom:20px;
+  font-size:16px;
+}
+
+.content p{
+  line-height:1.7;
+  color:#ccc;
+  font-size:16px;
+}
+
+/* BANNERS */
+.banner{
+  background:#1a1a1a;
+  border:1px dashed #333;
+  text-align:center;
+  padding:25px;
+  margin:30px 0;
+  color:#777;
+}
+
+/* BACK */
+.back{
+  display:inline-block;
+  margin-top:25px;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* RELATED */
+.related{
+  margin-top:50px;
+}
+
+.related h2{
+  margin-bottom:15px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+}
+
+.card-content{
+  padding:12px;
+}
+
+.card-content h3{
+  font-size:16px;
+  margin:0 0 6px;
+}
+
+.card-content p{
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>MUNDO ASOMBROSO</header>
+
+<div class="container">
+
+<!-- IMAGEN -->
+<div class="hero">
+  <img src="https://i.postimg.cc/Hkg8B2Xt/IMG-1040.png" alt="">
+</div>
+
+<!-- TITULO -->
+<h1>🏺 5 Objetos Antiguos que la Ciencia Todavía no Puede Explicar</h1>
+
+<div class="description">
+A pesar de toda nuestra tecnología moderna, el pasado sigue guardando secretos que dejan a los científicos sin palabras. Estos son los 5 hallazgos más misteriosos de la historia:
+</div>
+
+<!-- BANNER TOP -->
+<div class="banner">
+  <script async="async" data-cfasync="false" src="https://pl28430211.effectivegatecpm.com/5166b17b90d24535c2b598b3d53e93d8/invoke.js"></script>
+  <div id="container-5166b17b90d24535c2b598b3d53e93d8"></div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+<p>1. La Máquina de Anticitera: Encontrada en un naufragio en Grecia, es una "computadora" de bronce de más de 2.000 años de antigüedad que podía predecir eclipses con precisión exacta.</p>
+<p>2. El Manuscrito Voynich: Un libro escrito en un idioma que nadie en el mundo ha podido traducir, con dibujos de plantas que no existen en la Tierra.</p>
+<p>3. Las Esferas de Piedra de Costa Rica: Cientos de esferas perfectamente redondas, desde pocos centímetros hasta 2 metros, talladas por una civilización antigua sin herramientas de metal.</p>
+<p>4. El Pilar de Hierro de Delhi: Una columna en la India que tiene 1.600 años y, a pesar de estar a la intemperie, ¡no tiene ni una gota de óxido! La metalurgia antigua sigue siendo un misterio.</p>
+<p>5. Las Líneas de Nazca: Gigantescos dibujos en el desierto de Perú que solo pueden verse desde el aire. ¿Para quién fueron diseñados si en esa época no se podía volar?</p>
+
+<p>¿Querés ver las fotos reales del objeto #2 que dejó mudos a los expertos?</p>
+  <p>Descubrí la galería completa y las teorías más locas haciendo clic acá:</p>
+  <a href="https://www.effectivegatecpm.com/ay2whftw?key=9ff2b0d68387d4387241831ab8a60544" target="_blank">Continuar</a>
+<div>
+
+<!-- BANNER MID -->
+<div class="banner">
+  <script>
+  atOptions = {
+    'key' : '932dc682bb84a7790eac93c9f726b4fd',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/932dc682bb84a7790eac93c9f726b4fd/invoke.js"></script>
+</div>
+
+<a class="back" href="../index.html">← Volver al inicio</a>
+
+<!-- RELACIONADOS -->
+<div class="related">
+<h2>🔥 También te puede interesar</h2>
+<div class="cards" id="related-posts"></div>
+</div>
+
+</div>
+
+<!-- DATA POSTS -->
+<script src="../data/posts.js"></script>
+
+<script>
+const shuffled = POSTS
+  .filter(p => p.url !== location.pathname)
+  .sort(() => 0.5 - Math.random())
+  .slice(0,3);
+
+const container = document.getElementById("related-posts");
+
+shuffled.forEach(p=>{
+  container.innerHTML += `
+    <a href="${p.url}" style="text-decoration:none;color:inherit">
+      <div class="card">
+        <img src="${p.image}">
+        <div class="card-content">
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+        </div>
+      </div>
+    </a>
+  `;
+});
+</script>
+
+<script src="https://pl28430223.effectivegatecpm.com/ea/e9/bb/eae9bbc9118cfffbef3865aec22e97f1.js"></script>
+
+</body>
+</html>
